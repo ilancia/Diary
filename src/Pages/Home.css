@@ -1,0 +1,60 @@
+.header-wrapper {
+    border: 1px black solid;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #33353A;
+}
+
+.name {
+    padding: 0px;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+.home-title {
+    border: 1px black solid;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.button-wrapper {
+    justify-content: right;
+    width: 80%;
+    height: 20px;
+    padding: 10px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.remove-button {
+    height: 20px;
+}
+
+.to-read {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.check-box {
+    margin-right: 10px;
+}

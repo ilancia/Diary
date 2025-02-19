@@ -1,0 +1,27 @@
+.save-wrapper {
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    margin: 10px auto 10px;
+}
+
+.title {
+    border: 1px black solid;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.content {
+    border: 1px black solid;
+    width: 80%;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+}

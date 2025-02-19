@@ -1,0 +1,6 @@
+.update-wrapper {
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    margin: 10px auto 10px;
+}
