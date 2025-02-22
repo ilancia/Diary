@@ -5,7 +5,7 @@ export default function Header(props) {
 
   return (
     <div>
-      <button onClick={props.rotary}>{Home}</button>
+      <button class="write" onClick={props.rotary}>{Home}</button>
     </div>
   )
 }

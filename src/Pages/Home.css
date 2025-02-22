@@ -1,5 +1,5 @@
 .header-wrapper {
-    border: 1px black solid;
+
     width: 80%;
     height: 50px;
     margin: auto;
@@ -9,23 +9,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #33353A;
+    background-color: #32373D;
 }
 
 .name {
     padding: 0px;
     font-weight: bold;
     border: none;
-    color: white;
+    color: #A5ABAF;
+}
+
+.write {
+    background-color: #C5630C;
+    color: A5ABAF;
+    border: none;
+    border-radius: 5px;
 }
 
 .home-title {
-    border: 1px black solid;
+
     width: 80%;
     height: 50px;
     margin: auto;
     margin-bottom: 10px;
     border-radius: 10px;
+    background-color: #32373D;
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -43,6 +51,10 @@
 
 .remove-button {
     height: 20px;
+    border: none;
+    background-color: #C5630C;
+    color: black;
+    border-radius: 5px;
 }
 
 .to-read {
@@ -53,8 +65,23 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: #A5ABAF;
 }
 
 .check-box {
     margin-right: 10px;
+    background-color: #A5ABAF;
+    border: none;
+    border-radius: 5px;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #2F2A25;
+    }
 }

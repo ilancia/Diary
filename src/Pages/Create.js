@@ -20,7 +20,7 @@ export const Create = (props) => {
   return (
     <div>
       <div class="save-wrapper">
-        <button onClick={handleCreate} >저장</button>
+        <button class="save" onClick={handleCreate} >저장</button>
       </div>
       <input class="title" onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
       <textarea class="content" onChange={(e) => setContent(e.target.value)} placeholder='내용' />
