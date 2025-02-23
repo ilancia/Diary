@@ -27,7 +27,6 @@
 }
 
 .home-title {
-
     width: 80%;
     height: 50px;
     margin: auto;
@@ -55,6 +54,9 @@
     background-color: #C5630C;
     color: black;
     border-radius: 5px;
+    margin-left: 85%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .to-read {
@@ -73,11 +75,6 @@
     background-color: #A5ABAF;
     border: none;
     border-radius: 5px;
-}
-
-.background {
-    height: 100%;
-    width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

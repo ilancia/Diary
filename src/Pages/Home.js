@@ -28,12 +28,12 @@ export default function Home() {
     };
 
     return (
-        <div class="background">
+        <div>
             <div class="header-wrapper">
                 <div class="name">유정호</div>
                 <Header rotary={rotary} location={location} />
             </div>
-            {isNotEmpty ? <div class="button-wrapper"> <button class="remove-button" onClick={() => { handleRemoveDiary() }}>삭제</button></div> : null}
+            {isNotEmpty ? <button class="remove-button" onClick={() => { handleRemoveDiary() }}>삭제</button> : null}
             {isNotEmpty ? diaryList.map((diary) => (<div class="home-title"> <div class="to-read" onClick={() => navigate(`/Read/${diary.id}`)}>{diary.title}</div>|
                 <input class="check-box" type='checkbox' checked={diary.ischeck} onChange={(e) => checkbox(e, diary.id)} />
             </div>)) : null}

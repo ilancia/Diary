@@ -19,11 +19,9 @@ export const Create = (props) => {
 
   return (
     <div>
-      <div class="save-wrapper">
-        <button class="save" onClick={handleCreate} >저장</button>
-      </div>
-      <input class="title" onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
-      <textarea class="content" onChange={(e) => setContent(e.target.value)} placeholder='내용' />
+      <button class="save" onClick={handleCreate} >저장</button>
+      <input class="title" spellCheck="false" onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
+      <textarea class="content" spellCheck="false" onChange={(e) => setContent(e.target.value)} placeholder='내용' />
     </div>
   )
 }

@@ -25,8 +25,8 @@ export const Read = (props) => {
       <div class="update-wrapper">
         <button class="update" onClick={() => { updateList() }} >수정</button>
       </div>
-      <input class="title" name="title" value={foundDiary.title} onChange={onChange} placeholder='제목' />
-      <textarea class="content" name="content" value={foundDiary.content} onChange={onChange} placeholder='내용' />
+      <input class="title" name="title" spellCheck="false" value={foundDiary.title} onChange={onChange} placeholder='제목' />
+      <textarea class="content" name="content" spellCheck="false" value={foundDiary.content} onChange={onChange} placeholder='내용' />
     </div>
   )
 }

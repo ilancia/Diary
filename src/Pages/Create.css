@@ -1,16 +1,12 @@
-.save-wrapper {
-    display: flex;
-    justify-content: right;
-    width: 80%;
-    margin: 10px auto 10px;
-}
-
 .save {
     height: 20px;
     border: none;
     background-color: #C5630C;
     color: black;
     border-radius: 5px;
+    margin-left: 85%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .title {
@@ -24,6 +20,7 @@
     display: flex;
     background-color: #32373D;
     color: #A5ABAF;
+    padding-left: 5px;
 }
 
 .content {
@@ -36,4 +33,19 @@
     display: flex;
     background-color: #32373D;
     color: #A5ABAF;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+input:focus {
+    outline: 1px solid #C5630C;
+}
+
+textarea:focus {
+    outline: 1px solid #C5630C;
+}
+
+textarea {
+    resize: none;
+    font-family: 'Raleway', sans-serif;
 }
