@@ -22,9 +22,7 @@ export const Read = (props) => {
   //Update기능 구현 리스트에 저장된 
   return (
     <div>
-      <div class="update-wrapper">
-        <button class="update" onClick={() => { updateList() }} >수정</button>
-      </div>
+      <button class="update" onClick={() => { updateList() }} >수정</button>
       <input class="title" name="title" spellCheck="false" value={foundDiary.title} onChange={onChange} placeholder='제목' />
       <textarea class="content" name="content" spellCheck="false" value={foundDiary.content} onChange={onChange} placeholder='내용' />
     </div>
