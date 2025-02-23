@@ -38,16 +38,6 @@
     align-items: center;
 }
 
-.button-wrapper {
-    justify-content: right;
-    width: 80%;
-    height: 20px;
-    padding: 10px;
-    display: flex;
-    margin: auto;
-    align-items: center;
-}
-
 .remove-button {
     height: 20px;
     border: none;
@@ -62,7 +52,7 @@
 .to-read {
     cursor: pointer;
     display: inline-block;
-    padding: 10px;
+    margin: 10px;
     width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
