@@ -9,10 +9,14 @@ export const Read = (props) => {
   const listFindIndex = props.diaryList.findIndex((dia) => dia.id == foundDiary.id);
 
   const updateList = () => {
-    copiedDiary[listFindIndex].title = foundDiary.title;
-    copiedDiary[listFindIndex].content = foundDiary.content;
-    props.setDiaryList(copiedDiary);
-    props.navigate("/");
+    if (!foundDiary.title.trim() || !foundDiary.content.trim()) {
+      alert("수정내용은 공백이 될 수 없습니다.");
+    } else {
+      copiedDiary[listFindIndex].title = foundDiary.title;
+      copiedDiary[listFindIndex].content = foundDiary.content;
+      props.setDiaryList(copiedDiary);
+      props.navigate("/");
+    }
   };
 
   const onChange = (event) => {
