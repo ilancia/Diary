@@ -10,7 +10,7 @@ export const Read = (props) => {
 
   const updateList = () => {
     if (!foundDiary.title.trim() || !foundDiary.content.trim()) {
-      alert("수정내용은 공백이 될 수 없습니다.");
+      alert("수정 내용은 공백이 될 수 없습니다.");
     } else {
       copiedDiary[listFindIndex].title = foundDiary.title;
       copiedDiary[listFindIndex].content = foundDiary.content;
@@ -23,7 +23,7 @@ export const Read = (props) => {
     const { value, name } = event.target;
     setFoundDiary({ ...foundDiary, [name]: value, });
   }
-  //Update기능 구현 리스트에 저장된 
+
   return (
     <div>
       <button class="update" onClick={() => { updateList() }} >수정</button>
