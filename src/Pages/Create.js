@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./Create.css"
 
@@ -19,9 +19,9 @@ export const Create = (props) => {
 
   return (
     <div>
-      <button class="save" onClick={handleCreate} >저장</button>
-      <input class="title" spellCheck="false" onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
-      <textarea class="content" spellCheck="false" onChange={(e) => setContent(e.target.value)} placeholder='내용' />
+      <button className="save" onClick={handleCreate} >저장</button>
+      <input className="title" spellCheck="false" onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
+      <textarea className="content" spellCheck="false" onChange={(e) => setContent(e.target.value)} placeholder='내용' />
     </div>
   )
 }
