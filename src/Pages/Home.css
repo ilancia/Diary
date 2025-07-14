@@ -1,15 +1,15 @@
-.header-wrapper {
 
+
+.header-wrapper {
     width: 80%;
     height: 50px;
-    margin: auto;
-    margin-top: 50px;
     border-radius: 10px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #32373D;
+    margin: auto;
 }
 
 .name {
