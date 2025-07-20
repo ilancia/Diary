@@ -40,7 +40,7 @@ router.put('/Update/:id',verifyToken, async (req, res) => {
     const diary = await Diary.findOneAndUpdate(
         { id: req.params.id, userId: req.user.id },
         { title, content },
-        { new: true }); //최신문서 반환하는 역할의 옵션
+        { new: true });
     if (!diary) return res.status(404).json({ message: '일기를 찾을 수 없습니다.' });
     res.status(200).json({ message: '일기 수정 성공', diary });
 });

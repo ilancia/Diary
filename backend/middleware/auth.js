@@ -1,15 +1,21 @@
 const jwt = require('jsonwebtoken');
 
-function verifyToken(req, res, next) {
-    const token = req.headers.authorization?.split(' ')[1];
-    if (!token) return res.status(401).json({ message: '토큰이 없습니다.' });
+const verifyToken = (req, res, next) => {
+    const authHeader = req.headers.authorization;
 
-    try {
-        req.user = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded;
-        next();
-    } catch (error) {
-        return res.status(401).json({ message: '유효하지 않은 토큰입니다.' });
+    if (!authHeader) {
+        return res.status(403).json({ message: '토큰이 없습니다. 접근 거부' });
     }
-}
+
+    const token = authHeader.split(' ')[1]; // "Bearer <token>"
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+            return res.status(403).json({ message: '유효하지 않은 토큰' });
+        }
+        req.user = decoded; // 토큰 내용 저장
+        next();
+    });
+};
+
 module.exports = verifyToken;
