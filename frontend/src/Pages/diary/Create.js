@@ -14,15 +14,12 @@ export const Create = () => {
       if (!title.trim() || !content.trim()) {
         alert("제목과 내용을 입력하세요");
       } else {
-        const response = await api.post('/CRUD/Create', {
-          title,
-          content,
-        });
+        await api.post('/diary/Create', { title, content });
         alert('작성 완료');
         navigate("/");
       }
     } catch (error) {
-      alert('일기 작성에 실패했습니다. 다시 시도해주세요.');
+      alert('통신환경이 불안정합니다. 다시 시도해주세요.');
     }
   }
 

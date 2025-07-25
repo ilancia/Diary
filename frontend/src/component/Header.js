@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
   const navigate = useNavigate();
-  const goToSignup = () => navigate('/Register?');
-  const goToLogin = () => navigate('/Login?');
+  const goToSignup = () => navigate('/Register');
+  const goToLogin = () => navigate('/Login');
   const goToHome = () => navigate('/');
   return (
     <div>

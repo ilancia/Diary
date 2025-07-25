@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export const UserDiary = () => {
     const [diaryList, setDiaryList] = useState([]);
@@ -7,9 +7,10 @@ export const UserDiary = () => {
     useEffect(() => {
         const fetchDiaries = async () => {
             try {
-                const response = await axios.get('/CRUD/diaries');
-                const data = await response.json();
-                setDiaryList(data);
+                const response = await axios.get('/diary/Read', {
+                    headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+                });
+                setDiaryList(response.data.title);
             } catch (error) {
                 console.error('Error fetching diaries:', error);
             }
@@ -19,15 +20,14 @@ export const UserDiary = () => {
 
     return (
         <div>
-            {diaries.length > 0 ? (
-                diaries.map((diary) => (
+            {diaryList.length > 0 ? (
+                diaryList.map((diary) => (
                     <div key={diary._id} style={{ border: '1px solid #ddd', margin: '10px', padding: '10px' }}>
-                        <h3>{diary.title}</h3>
-                        <p>{diary.content}</p>
+                        <div>{diary.title}</div>
                     </div>
                 ))
             ) : (
-                <p>작성된 다이어리가 없습니다.</p>
+                <div>(사진이 들어갈 자리)</div>
             )}
         </div>
     )

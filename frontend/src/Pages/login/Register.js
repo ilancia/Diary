@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import api from '../../api/diaryApi'
+import api from '../../api/diaryApi';
 
 export const Register = (props) => {
   const [username, setUsername] = useState('');
@@ -8,24 +8,23 @@ export const Register = (props) => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('/api/auth/register', { username, password, });
-       console.log( response.data);
+      await api.post('/auth/register', { username, password });
       alert('회원가입 성공!');
       props.navigate('/Login');
     } catch (error) {
       alert('회원가입에 실패하였습니다.');
-      console.log(error);
-      console.log(username, password);
     }
   }
 
   return (
     <div>
-      <form onSubmit={handleRegister}>
-        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
-        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        <button type="submit">Register</button>
-      </form>
+      <div>
+        <form onSubmit={() => handleRegister()}>
+          <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div >
   )
 }
