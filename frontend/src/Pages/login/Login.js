@@ -1,5 +1,5 @@
+import axios from 'axios';
 import React, { useState } from 'react'
-import api from '../../api/diaryApi';
 
 export const Login = (props) => {
   const [username, setUsername] = useState('');
@@ -8,7 +8,8 @@ export const Login = (props) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await api.post('/auth/Login', { username, password });
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`, { username, password });
+      localStorage.setItem('token', res.data.token);
       alert('로그인');
       props.navigate('/');
     } catch (error) {
@@ -19,7 +20,7 @@ export const Login = (props) => {
   return (
     <div>
       <div>
-        <form onSubmit={() => handleLogin()}>
+        <form onSubmit={handleLogin}>
           <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <button type='submit'>Login</button>

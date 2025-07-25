@@ -25,7 +25,7 @@ export const Create = () => {
 
   return (
     <div>
-      <form className="create-form" onSubmit={() => handleCreate()}>
+      <form className="create-form" onSubmit={handleCreate}>
         <input className="title" type="text" spellCheck="false" onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
         <textarea className="content" spellCheck="false" onChange={(e) => setContent(e.target.value)} placeholder='내용' />
         <button className="save" type="submit">작성</button>
