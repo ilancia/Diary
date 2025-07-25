@@ -15,7 +15,7 @@ router.post('/register', async (req, res) => {
         await newUser.save();
         res.status(201).json({ message: '회원가입 성공' });
     } catch (err) {
-        res.status(500).json({ message: '회원가입 실패' });
+        res.status(500).json({ message: '이미 존재하는 사용자입니다.' });
     }
 });
 
@@ -33,9 +33,9 @@ router.post('/login', async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
-        res.status(200).json({ message: '로그인 성공' }, token);
+        res.status(200).json({ message: '로그인 성공', token }, token);
     } catch (err) {
-        res.status(400).json({message:'로그인 실패'});
+        res.status(400).json({ message: '로그인 실패' });
     }
 });
 module.exports = router;
