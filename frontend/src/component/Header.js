@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
   const navigate = useNavigate();
-  const goToSignup = () => navigate('/Register');
-  const goToLogin = () => navigate('/Login');
-  const goToHome = () => navigate('/');
+  const gotoWhere = (x) => navigate(`/${x}`);
   return (
     <div>
-      <div className="header-wrapper">
-        <div className="header-left">
-          <span className="home" onClick={goToHome}>Home</span>
+      <div className='header-wrapper'>
+        <div className='header-left'>
+          <span className='home' onClick={() => gotoWhere('')}>Home</span>
+          <span className='user' onClick={() => gotoWhere('User')}>User</span>
+          <span className='Create' onClick={() => gotoWhere('Create')}>Create</span>
         </div>
-        <div className="header-right">
-          <span className="login" onClick={goToLogin} navigate={navigate}>Login</span>
-          <span className="signup" onClick={goToSignup} navigate={navigate} >Signup</span>
+        <div className='header-right'>
+          <div className='login' onClick={() => gotoWhere('Login')} gotoWhere={()=>gotoWhere()}>Login</div>
+          <div className='signup' onClick={() => gotoWhere('Register')} gotoWhere={()=>gotoWhere()}>Signup</div>
         </div>
       </div>
     </div>

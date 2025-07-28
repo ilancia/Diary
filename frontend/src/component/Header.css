@@ -1,0 +1,25 @@
+.header-wrapper {
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #32373D;
+    margin: auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: space-around;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    width: 15%;
+    justify-content: space-around;
+}

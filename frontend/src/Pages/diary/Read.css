@@ -15,4 +15,22 @@
     border-radius: 5px;
     background-color: #32373D;
     padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    border: none;
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    justify-content: space-between;
+    display: flex;
+    background-color: #32373D;
+    color: #A5ABAF;
+    padding: 5px;
+    font-size: large;
+    align-items: center;
 }

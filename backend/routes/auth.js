@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
         const user = await User.findOne({ username });
-        if (!username) return res.status(400).json({ message: '로그인 아이디가 존재하지않았습니다.' });
+        if (!username) return res.status(400).json({ message: '로그인 아이디가 존재하지않습니다.' });
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(400).json({ message: '비밀번호가 일치하지않습니다.' });
@@ -33,7 +33,7 @@ router.post('/login', async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
-        res.status(200).json({ message: '로그인 성공', token }, token);
+        res.status(200).json({ token }, { message: '로그인 성공'});
     } catch (err) {
         res.status(400).json({ message: '로그인 실패' });
     }
