@@ -37,8 +37,7 @@ export const Read = () => {
         navigate('/User');
       }
     } catch (err) {
-      alert('통신환경이 불안정합니다. 다시 시도해주세요.');
-      console.log(err);
+      alert(err, '수정 실패');
     }
   }
 
