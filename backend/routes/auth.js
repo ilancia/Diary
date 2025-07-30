@@ -8,7 +8,6 @@ router.post('/register', async (req, res) => {
     const { username, password } = req.body;
     if (!username || !password)
         return res.status(400).json({ message: '사용자 기입정보를 입력하세요.' });
-
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ username, password: hashedPassword });

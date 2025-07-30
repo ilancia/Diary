@@ -10,7 +10,7 @@ const verifyToken = (req, res, next) => {
         req.user = decoded;
         next();
     } catch (err) {
-        return res.status(403).json({ message: '유효하지않은 토큰입니다.' });
+        return res.status(401).json({ message: '유효하지않은 토큰입니다.' });
     }
 };
 
