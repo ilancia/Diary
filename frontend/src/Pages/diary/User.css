@@ -1,0 +1,47 @@
+.uploaded-wrapper {
+    color: white;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #32373D;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uploaded-left {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 70%;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.uploaded-date {
+    margin-right: 5px;
+}
+
+.uploaded-title {
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    background-color: #32373D;
+    color: #A5ABAF;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.uploaded-delete {
+    height: 20px;
+    border: none;
+    background-color: #C5630C;
+    color: black;
+    border-radius: 5px;
+    margin-right: 10px;
+}

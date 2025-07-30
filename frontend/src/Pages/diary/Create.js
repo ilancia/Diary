@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Create.css'
 import api from '../../api/diaryApi';
@@ -7,6 +7,19 @@ export const Create = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+
+  useEffect(() => {
+    const auth = async () => {
+      try {
+        await api.get('/private/');
+      } catch (error) {
+        alert('로그인이 필요합니다.');
+        localStorage.removeItem('token');
+        navigate('/Login');
+      }
+    }
+    auth();
+  }, [navigate]);
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -19,17 +32,18 @@ export const Create = () => {
         navigate('/User');
       }
     } catch (err) {
-      alert('통신환경이 불안정합니다. 다시 시도해주세요.');
-      console.log(err);
+      alert('로그인이 필요한 서비스입니다.');
+      localStorage.removeItem('token');
+      navigate('/Login');
     }
   }
 
   return (
     <div>
       <form className='create-form' onSubmit={handleCreate}>
-        <input className='title' type='text' spellCheck='false' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
-        <textarea className='content' spellCheck='false' value={content} onChange={(e) => setContent(e.target.value)} placeholder='내용' />
-        <button className='save' type='submit'>작성</button>
+        <input className='create-title' type='text' spellCheck='false' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='제목' />
+        <textarea className='create-content' spellCheck='false' value={content} onChange={(e) => setContent(e.target.value)} placeholder='내용' />
+        <button className='create-save' type='submit'>작성</button>
       </form>
     </div>
   )

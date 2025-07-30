@@ -1,4 +1,4 @@
-.save {
+.create-save {
     height: 20px;
     border: none;
     background-color: #C5630C;
@@ -9,7 +9,7 @@
     margin-left: 85%;
 }
 
-.title {
+.create-title {
     border: none;
     width: 80%;
     height: 50px;
@@ -24,7 +24,7 @@
     font-size: large;
 }
 
-.content {
+.create-content {
     border: none;
     width: 80%;
     height: 500px;

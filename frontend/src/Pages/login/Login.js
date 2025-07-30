@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import api from '../../api/diaryApi';
 import { useNavigate } from 'react-router-dom';
+import './Login.css';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -15,18 +16,22 @@ export const Login = () => {
       alert('로그인 확인');
     } catch (err) {
       alert('아이디와 비밀번호가 일치하지 않습니다.');
+      navigate('/Login');
     }
   }
 
   return (
     <div>
-      <div>
-        <form onSubmit={handleLogin}>
-          <input type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
-          <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button type='submit' onClick={() => navigate('/')}>Login</button>
-        </form>
-      </div>
+      <form className='login-form' onSubmit={handleLogin}>
+        <span className='login-title'>로그인</span>
+        <div className='login-wrapper'>
+          <div className='login-inputs'>
+            <input className='id' type='text' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input className='password' type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+          <button className='login-button' type='submit' onClick={() => navigate('/')}>Login</button>
+        </div>
+      </form>
     </div>
   )
 }

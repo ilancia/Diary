@@ -8,6 +8,11 @@
     align-items: center;
     background-color: #32373D;
     margin: auto;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .header-left {
@@ -15,6 +20,37 @@
     align-items: center;
     width: 20%;
     justify-content: space-around;
+
+    div {
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        transition: 0.5s ease;
+    }
+
+    div:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #C5630C;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    div:hover:after {
+        transition: 0.5s ease;
+        width: 100%;
+        left: 0;
+    }
+
+    div:hover {
+        font-size: large;
+        transition: 0.5s ease
+    }
 }
 
 .header-right {
@@ -22,4 +58,35 @@
     align-items: center;
     width: 15%;
     justify-content: space-around;
+
+    div {
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        transition: 0.5s ease;
+    }
+
+    div:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #C5630C;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    div:hover:after {
+        transition: 0.5s ease;
+        width: 100%;
+        left: 0;
+    }
+
+    div:hover {
+        font-size: large;
+        transition: 0.5s ease
+    }
 }

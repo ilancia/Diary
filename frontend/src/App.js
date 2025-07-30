@@ -10,17 +10,15 @@ import { User } from './Pages/diary/User';
 import { useParams } from 'react-router-dom';
 
 const App = () => {
-  const id = useParams();
   return (
     <>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Create' element={<Create />} />
-        <Route path={`/Read/${id}`} element={<Read />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Register' element={<Register />} />
-        <Route path='/diary/:id' element={<Read />} />
+        <Route path='/Read/:id' element={<Read />} />
         <Route path='/User' element={<User />} />
       </Routes>
     </>
