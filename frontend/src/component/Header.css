@@ -90,3 +90,19 @@
         transition: 0.5s ease
     }
 }
+
+@media (max-width: 600px) {
+    .header-wrapper {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .header-left,
+    .header-right {
+        width: 100%;
+        justify-content: space-around;
+        margin: 5px 0;
+    }
+}
